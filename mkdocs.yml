@@ -22,4 +22,4 @@ markdown_extensions:
 # Repository configuration (for the edit link on pages)
 repo_name: Guy-Ghis/mk-docs
 repo_url: https://github.com/Guy-Ghis/mk-docs
-edit_uri: edit/main/docs/
+edit_uri: edit/master/docs/
