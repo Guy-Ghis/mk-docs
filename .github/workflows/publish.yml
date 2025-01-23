@@ -1,3 +1,4 @@
+name: automated build and deploy (ghcr.io)
 on:
   push:
     branches:
