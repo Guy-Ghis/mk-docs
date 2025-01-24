@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-22.04
     permissions:
       packages: write
+      contents: read
 
     steps:
       # Checkout the repository code.
@@ -25,23 +26,24 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          
-          #Slim it!
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository }}/mkdocs:latest
+            ghcr.io/${{ github.repository }}/mkdocs:${{ github.run_number }}
+
       - name: Slim Project
-        uses: kitabisa/docker-slim-action@v1
-        env:
-          DSLIM_HTTP_PROBE: false
-        with:
-          target: ghcr.io/${{ github.repository }}/mkdocs:latest
-          tag: "slim"
-          overwrite: true
-          
-      # Push the slimmed image
+        run: |
+          docker pull ghcr.io/${{ github.repository }}/mkdocs:latest
+          docker tag ghcr.io/${{ github.repository }}/mkdocs:latest mkdocs:latest
+          docker-slim mkdocs:latest --http-probe=false
+          docker tag mkdocs:slim ghcr.io/${{ github.repository }}/mkdocs:slim
+          docker push ghcr.io/${{ github.repository }}/mkdocs:slim
+
       - name: Push Slimmed Image
         uses: docker/build-push-action@v4
         with:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/mkdocs:latest
-            ghcr.io/${{ github.repository }}/mkdocs:${{ github.run_number }}
+            ghcr.io/${{ github.repository }}/mkdocs:slim
+            ghcr.io/${{ github.repository }}/mkdocs:slim-${{ github.run_number }}
