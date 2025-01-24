@@ -31,8 +31,8 @@ jobs:
       # Build and deploy the site to GitHub Pages
       - name: Deploy to GitHub Pages          
         run: |
-          # sed -i -E "s/your-username/${{github.repository_owner}}/g" ./README.md
+          # sed -i -E "s/Guy-Ghis${{github.repository_owner}}/g" ./README.md
           # sed -i -E "s/my-mkdocs-project/${{github.repository}}/g" ./README.md
-          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/Guy-Ghis/mk-docs.git
+          git remote set-url origin https://github.com/Guy-Ghis/mk-docs.git:${GH_TOKEN}@github.com/Guy-Ghis/mk-docs.git
       
           mkdocs gh-deploy --force
