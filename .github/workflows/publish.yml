@@ -25,6 +25,16 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
+          
+          #Slim it!
+      - name: Slim Project
+        uses: kitabisa/docker-slim-action@v1
+        env:
+          DSLIM_HTTP_PROBE: false
+        with:
+          target: ghcr.io/${{ github.repository }}/mkdocs
+          tag: "slim"
+          
           push: true
           tags: |
             ghcr.io/${{ vars.REPOSITORY }}:latest
