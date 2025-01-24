@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://Guy-Ghis.github.io/mk-docs/multipass/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Multipass - My MkDocs Project</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">My MkDocs Project</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../about/" class="nav-link">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Multipass</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../about/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/Guy-Ghis/mk-docs/edit/master/docs/multipass.md" class="nav-link">Edit on Guy-Ghis/mk-docs
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#1-multipass-for-beginners" class="nav-link">1. Multipass for Beginners</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#11-introduction" class="nav-link">1.1. Introduction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#12-using-the-docker-blueprint-in-multipass" class="nav-link">1.2. Using the docker blueprint in multipass</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#13-using-alias-with-the-docker-commands" class="nav-link">1.3. Using alias with the Docker commands</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#14-using-portainer" class="nav-link">1.4. Using Portainer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="1-multipass-for-beginners">1. <strong>Multipass for Beginners</strong><a class="headerlink" href="#1-multipass-for-beginners" title="Permanent link">&para;</a></h1>
+<h2 id="11-introduction">1.1. Introduction<a class="headerlink" href="#11-introduction" title="Permanent link">&para;</a></h2>
+<p>Multipass is a tool to generate cloud-style Ubuntu Virtual Machines(VMs) quickly on Linux, macOS and Windows. It provides a simple but powerful Commamd Line Interface that allows you to create your own local mini-cloud, thereby protecting your host machine from being corrupted.<br>
+From there you can run most risky processes and applications without damaging your machine.</p>
+<p>The following commands are useful when working with multipass;</p>
+<h3 id="111-install-multipass">1.1.1. Install multipass<a class="headerlink" href="#111-install-multipass" title="Permanent link">&para;</a></h3>
+<p>Run the command below to install multipass</p>
+<div class="codehilite"><pre><span></span><code>snap<span class="w"> </span>install<span class="w"> </span>multipass
+</code></pre></div>
+
+<h3 id="112-create-an-instance-in-multipass-with-custom-name">1.1.2. Create an instance in multipass with custom name<a class="headerlink" href="#112-create-an-instance-in-multipass-with-custom-name" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>launch<span class="w"> </span>multipass<span class="w"> </span>--name<span class="w"> </span><span class="sb">`</span>custom<span class="w"> </span>name<span class="sb">`</span>
+</code></pre></div>
+
+<h3 id="113-use-an-instance">1.1.3. Use an instance<a class="headerlink" href="#113-use-an-instance" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>multipass<span class="w"> </span>start<span class="w"> </span>--name<span class="w"> </span><span class="sb">`</span>custom<span class="w"> </span>name<span class="sb">`</span>
+</code></pre></div>
+
+<h3 id="114-to-delete-an-instance">1.1.4. To delete an instance<a class="headerlink" href="#114-to-delete-an-instance" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>multipass<span class="w"> </span>delete<span class="w">  </span>--name<span class="w"> </span><span class="sb">`</span>custom<span class="w"> </span>name<span class="sb">`</span>
+</code></pre></div>
+
+<h3 id="115-to-delete-all-instances">1.1.5. To delete all instances<a class="headerlink" href="#115-to-delete-all-instances" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>multipass<span class="w"> </span>delete<span class="w"> </span>--all
+</code></pre></div>
+
+<h3 id="116-to-recover-an-instance">1.1.6. To recover an instance<a class="headerlink" href="#116-to-recover-an-instance" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>multipass<span class="w"> </span>recover<span class="w"> </span>--name<span class="w"> </span><span class="sb">`</span>custom<span class="w"> </span>name<span class="sb">`</span>
+</code></pre></div>
+
+<p><br></p>
+<h2 id="12-using-the-docker-blueprint-in-multipass">1.2. Using the docker blueprint in multipass<a class="headerlink" href="#12-using-the-docker-blueprint-in-multipass" title="Permanent link">&para;</a></h2>
+<p>The Docker blueprint gives Multipass users an easy way to create Ubuntu instances with Docker installed. It is based on the latest LTS release of Ubuntu, and includes docker engine and Portainer.</p>
+<p>To launch the Docker VM with default parameters, run the command</p>
+<div class="codehilite"><pre><span></span><code>multipass<span class="w"> </span>launch<span class="w"> </span>docker
+</code></pre></div>
+
+<p>This command will create a virtual machine running the latest version of Ubuntu, with Docker and Portainer installed
+<br></p>
+<p>Run the command below to use Docker VM</p>
+<div class="codehilite"><pre><span></span><code>multipass<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>docker<span class="w"> </span>docker<span class="sb">`</span>
+</code></pre></div>
+
+<p>To see created Docker images on your machine, run the command</p>
+<div class="codehilite"><pre><span></span><code>docker<span class="w"> </span>images
+</code></pre></div>
+
+<p>To display a list of all the Docker containers in your machine, run the command</p>
+<div class="codehilite"><pre><span></span><code>docker<span class="w"> </span>ps
+</code></pre></div>
+
+<p>You can use it to see all running and stopped containers with their sizes.</p>
+<p>To stop a Docker instance, run the command</p>
+<div class="codehilite"><pre><span></span><code>docker<span class="w"> </span>stop
+</code></pre></div>
+
+<h2 id="13-using-alias-with-the-docker-commands">1.3. Using alias with the Docker commands<a class="headerlink" href="#13-using-alias-with-the-docker-commands" title="Permanent link">&para;</a></h2>
+<p>The Docker blueprint creates automatically two aliases, that is, two commands which can be run from the host to use commands in the instance as if they were in the host. In particular, the <strong>host docker</strong> command executes docker in the instance, and the <strong>host docker-compose</strong> command executes docker-compose in the instance.</p>
+<h2 id="14-using-portainer">1.4. Using Portainer<a class="headerlink" href="#14-using-portainer" title="Permanent link">&para;</a></h2>
+<p>The Docker blueprint comes with portainer pre-installed, which is a universal container management platform which gives a user-friendly graphical interface for managing your Docker containers. To acces portainer you first need the IP address of your docker VM, this can be done using the command</p>
+<div class="codehilite"><pre><span></span><code>multipass<span class="w"> </span>list
+</code></pre></div></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
