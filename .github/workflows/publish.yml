@@ -32,7 +32,7 @@ jobs:
         env:
           DSLIM_HTTP_PROBE: false
         with:
-          target: ghcr.io/${{ github.repository }}/mkdocs
+          target: ghcr.io/${{ github.repository }}/mkdocs:latest
           tag: "slim"
           
           push: true
