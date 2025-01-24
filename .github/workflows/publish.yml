@@ -1,22 +1,22 @@
-name: automated build and deploy (ghcr.io)
 on:
   push:
     branches:
     - master
+
 jobs:
   build:
     runs-on: ubuntu-22.04
-    permissions: 
+    permissions:
       packages: write
 
     steps:
-      #Checkout the repository code
+      # Checkout the repository code
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Login to Container Registry
+      - name: Logn to Container Registry
         uses: docker/login-action@v2
-        with: 
+        with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
@@ -26,6 +26,6 @@ jobs:
         with:
           context: .
           push: true
-          tag: |
-            ghcr.io/${{ github.repository }}:latest
-            ghcr.io/${{ github.repository }}:${{ github.run_number }}
+          tags: |
+            ghcr.io/${{ vars.REPOSITORY }}:latest
+            ghcr.io/${{ vars.REPOSITORY }}:${{ github.run_number }}
