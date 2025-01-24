@@ -23,7 +23,8 @@ jobs:
 
       - name: Build Project
         uses: docker/build-push-action@v4
-        with: 
+        with:
+          push: true
           tag: |
             ghcr.io/${{ github.repository }}:latest
             ghcr.io/${{ github.repository }}:${{ github.run_number }}
